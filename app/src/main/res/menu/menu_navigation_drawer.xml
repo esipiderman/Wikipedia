@@ -3,8 +3,6 @@
 
     <item
         android:icon="@drawable/ic_writer"
-        android:checkable="true"
-        android:checked="true"
         android:id="@+id/menu_writer"
         android:title="be a writer"/>
 
