@@ -1,5 +1,6 @@
 package com.example.wikipedia.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,12 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wikipedia.MainActivity2
 import com.example.wikipedia.adapter.ExploreAdapter
+import com.example.wikipedia.adapter.ItemEvents
 import com.example.wikipedia.adapter.TrendAdapter
 import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.FragmentExploreBinding
 
-class FragmentExplore:Fragment() {
+const val SEND_DATA_TO_ACTIVITY2 = "sendData"
+
+class FragmentExplore:Fragment(), ItemEvents {
     lateinit var binding :FragmentExploreBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -59,7 +64,7 @@ class FragmentExplore:Fragment() {
 
             ItemPost(
                 "https://dunijet.ir/YaghootAndroidFiles/Wikipedia/piano_beethoven.jpg",
-                "Piano Beethoven",
+                "Ludwig van Beethoven",
                 "1822 piano sonata by Ludwig Beethoven",
                 "Ludwig van Beethoven baptised 17 December 1770 – 26 March 1827 was a German composer and pianist. Beethoven remains one of the most admired composers in the history of Western music; his works rank amongst the most performed of the classical music repertoire and span the transition from the Classical period to the Romantic era in classical music. His career has conventionally been divided into early, middle, and late periods. His early period, during which he forged his craft, is typically considered to have lasted until 1802. From 1802 to around 1812, his middle period showed an individual development from the styles of Joseph Haydn and Wolfgang Amadeus Mozart, and is sometimes characterized as heroic. During this time, he began to suffer increasingly from deafness. In his late period, from 1812 to 1827, he extended his innovations in musical form and expression.\n" +
                         "\n" +
@@ -117,9 +122,15 @@ class FragmentExplore:Fragment() {
         )
 
         //-------------SET RECYCLER ADAPTER-------
-        val myAdapter = ExploreAdapter(dataExplore)
+        val myAdapter = ExploreAdapter(dataExplore, this)
         binding.recyclerExplore.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.recyclerExplore.adapter = myAdapter
+    }
+
+    override fun itemClicked(itemPost: ItemPost) {
+        val intent = Intent(context, MainActivity2::class.java)
+        intent.putExtra(SEND_DATA_TO_ACTIVITY2, itemPost)
+        startActivity(intent)
     }
 
 }

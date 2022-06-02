@@ -9,7 +9,7 @@ import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.ItemTrendBinding
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
-class TrendAdapter(private val data:ArrayList<ItemPost>) :RecyclerView.Adapter<TrendAdapter.TrendViewHolder>() {
+class TrendAdapter(private val data:ArrayList<ItemPost>, val itemEvents: ItemEvents) :RecyclerView.Adapter<TrendAdapter.TrendViewHolder>() {
     lateinit var binding:ItemTrendBinding
 
     inner class TrendViewHolder(itemView :View) : RecyclerView.ViewHolder(itemView){
@@ -26,6 +26,10 @@ class TrendAdapter(private val data:ArrayList<ItemPost>) :RecyclerView.Adapter<T
             binding.txtSubtitleItemTrend.text = itemPost.txtSubTitle
             binding.txtTrendInsight.text = itemPost.insight
             binding.txtTrendNumber.text = (adapterPosition + 1).toString()
+
+            itemView.setOnClickListener {
+                itemEvents.itemClicked(itemPost)
+            }
 
         }
 

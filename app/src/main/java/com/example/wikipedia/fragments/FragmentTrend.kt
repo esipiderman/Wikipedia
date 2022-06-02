@@ -1,5 +1,6 @@
 package com.example.wikipedia.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wikipedia.MainActivity2
+import com.example.wikipedia.adapter.ItemEvents
 import com.example.wikipedia.adapter.TrendAdapter
 import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.FragmentTrendBinding
 
-class FragmentTrend:Fragment() {
+class FragmentTrend:Fragment(), ItemEvents {
     lateinit var binding :FragmentTrendBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -74,7 +77,7 @@ class FragmentTrend:Fragment() {
 
             ItemPost(
                 "https://dunijet.ir/YaghootAndroidFiles/Wikipedia/no_way_home.jpg",
-                "No Way Home",
+                "Spider-Man: No Way Home",
                 "2021 American\nsuperhero film",
                 "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man, co-produced by Columbia Pictures and Marvel Studios and distributed by Sony Pictures Releasing. It is the sequel to Spider-Man: Homecoming (2017) and Spider-Man: Far From Home (2019), and the 27th film in the Marvel Cinematic Universe (MCU). The film was directed by Jon Watts and written by Chris McKenna and Erik Sommers. It stars Tom Holland as Peter Parker / Spider-Man alongside Zendaya, Benedict Cumberbatch, Jacob Batalon, Jon Favreau, Jamie Foxx, Willem Dafoe, Alfred Molina, Benedict Wong, Tony Revolori, Marisa Tomei, Andrew Garfield, and Tobey Maguire. In the film, Parker asks Dr. Stephen Strange (Cumberbatch) to make his identity as Spider-Man a secret again with magic after its public revelation in Far From Home, but this breaks open the multiverse and allows supervillains from alternate realities to enter Parker's universe.\n" +
                         "\n" +
@@ -102,7 +105,7 @@ class FragmentTrend:Fragment() {
 
             ItemPost(
                 "https://dunijet.ir/YaghootAndroidFiles/Wikipedia/margaret.jpg",
-                "Margaret Campbell",
+                "Margaret Campbell, Duchess of Argyll",
                 "British socialite",
                 "Ethel Margaret Campbell, Duchess of Argyll (née Whigham, thereafter Sweeny; 1 December 1912 – 25 July 1993), was a British socialite best remembered for her much-publicised divorce from her second husband, Ian Campbell, 11th Duke of Argyll, in 1963, which featured salacious photographs and scandalous stories.\n" +
                         "\n" +
@@ -116,7 +119,7 @@ class FragmentTrend:Fragment() {
 
             ItemPost(
                 "https://dunijet.ir/YaghootAndroidFiles/Wikipedia/encanto.jpg",
-                "Encanto",
+                "Encanto (film)",
                 "2021 American animated\nfilm",
                 "Encanto is a 2021 American computer-animated musical fantasy comedy film produced by Walt Disney Animation Studios and distributed by Walt Disney Studios Motion Pictures. The 60th film produced by the studio, it was directed by Jared Bush and Byron Howard, co-directed by writer Charise Castro Smith who co-wrote the screenplay with Bush, and produced by Yvett Merino and Clark Spencer, with original songs written by Lin-Manuel Miranda. The film stars the voices of Stephanie Beatriz, María Cecilia Botero, John Leguizamo, Mauro Castillo, Jessica Darrow, Angie Cepeda, Carolina Gaitán, Diane Guerrero, and Wilmer Valderrama. The film premiered at the El Capitan Theatre in Los Angeles on November 3, 2021, and was theatrically released in the United States on November 24 over a 30-day theatrical run, in response to the COVID-19 pandemic. It received positive reviews from critics but has so far underperformed commercially as of December 2021 due to the shortened release frame, grossing over \$194 million.\n" +
                         "\n" +
@@ -142,7 +145,7 @@ class FragmentTrend:Fragment() {
 
             ItemPost(
                 "https://dunijet.ir/YaghootAndroidFiles/Wikipedia/james_webb.jpg",
-                "James Webb Space",
+                "James Webb Space Telescope",
                 "NASA/ESA space\ntelescope launched in\n2021",
                 "The James Webb Space Telescope (JWST) is a space telescope developed by NASA with contributions from the European Space Agency (ESA), and the Canadian Space Agency (CSA). The telescope is named after James E. Webb, who was the administrator of NASA from 1961 to 1968 and played an integral role in the Apollo program. It is intended to succeed the Hubble Space Telescope as NASA's flagship mission in astrophysics. JWST was launched on 25 December 2021 on Ariane flight VA256. It is designed to provide improved infrared resolution and sensitivity over Hubble, and will enable a broad range of investigations across the fields of astronomy and cosmology, including observations of some of the most distant events and objects in the Universe such as the formation of the first galaxies, and allowing detailed atmospheric characterization of potentially habitable exoplanets.\n" +
                         "\n" +
@@ -155,9 +158,17 @@ class FragmentTrend:Fragment() {
         )
 
         //-------------SET RECYCLER ADAPTER-------
-        val myAdapter = TrendAdapter(dataTrend)
+        val myAdapter = TrendAdapter(dataTrend, this)
         binding.recyclerTrend.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.recyclerTrend.adapter = myAdapter
+
+
+    }
+
+    override fun itemClicked(itemPost: ItemPost) {
+        val intent = Intent(context, MainActivity2::class.java)
+        intent.putExtra(SEND_DATA_TO_ACTIVITY2, itemPost)
+        startActivity(intent)
     }
 
 }

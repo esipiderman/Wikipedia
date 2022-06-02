@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.wikipedia.data.ItemPost
 import com.example.wikipedia.databinding.ItemExploreBinding
 
-class ExploreAdapter(private val data:ArrayList<ItemPost>) :RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
+class ExploreAdapter(private val data:ArrayList<ItemPost>, val itemEvents: ItemEvents) :RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>() {
     lateinit var binding:ItemExploreBinding
 
     inner class ExploreViewHolder(itemView :View) : RecyclerView.ViewHolder(itemView){
@@ -23,6 +23,10 @@ class ExploreAdapter(private val data:ArrayList<ItemPost>) :RecyclerView.Adapter
             binding.txtExploreTitle.text = itemPost.txtTitle
             binding.txtExploreSubtitle.text = itemPost.txtSubTitle
             binding.txtExploreDetail.text = itemPost.txtDetail
+
+            itemView.setOnClickListener {
+                itemEvents.itemClicked(itemPost)
+            }
 
         }
 
