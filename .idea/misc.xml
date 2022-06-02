@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.211" />
+        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable/ic__564506_close_exit_logout_power_icon.xml" value="0.211" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable/ic__666520_wikipedia_w_icon.xml" value="0.211" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable/ic_explore.xml" value="0.211" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.211" />
@@ -19,13 +20,16 @@
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/drawable/shape_circle.xml" value="0.211" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/activity_main2.xml" value="0.20444072056975282" />
+        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/activity_main3.xml" value="0.190625" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/fragment_explore.xml" value="0.25416666666666665" />
+        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/fragment_photographer.xml" value="0.264" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/fragment_trend.xml" value="0.25416666666666665" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/header_main.xml" value="0.25416666666666665" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/item_explore.xml" value="0.4" />
-        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/item_trend.xml" value="0.6" />
+        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/layout/item_trend.xml" value="0.4" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/menu/menu_main.xml" value="0.190625" />
         <entry key="..\:/kotlin/Wikipedia/Wikipedia/app/src/main/res/menu/menu_navigation_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/kotlin/Wikipedia/app/src/main/res/layout/activity_main.xml" value="0.4" />
       </map>

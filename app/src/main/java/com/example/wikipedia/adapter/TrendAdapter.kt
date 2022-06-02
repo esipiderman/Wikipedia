@@ -19,7 +19,7 @@ class TrendAdapter(private val data:ArrayList<ItemPost>, val itemEvents: ItemEve
             Glide
                 .with(itemView.context)
                 .load(itemPost.imgUrl)
-                .transform(RoundedCornersTransformation(42, 8))
+                .transform(RoundedCornersTransformation(28, 8))
                 .into(binding.imgItemTrend)
 
             binding.txtTitleItemTrend.text = itemPost.txtTitle

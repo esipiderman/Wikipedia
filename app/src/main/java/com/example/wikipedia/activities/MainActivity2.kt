@@ -1,11 +1,10 @@
-package com.example.wikipedia
+package com.example.wikipedia.activities
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.wikipedia.data.ItemPost
